@@ -76,9 +76,13 @@ sudo apt install -y i2c-tools python3-pip python3-smbus
 sudo i2cdetect -y 1
 
 sudo apt install -y python3-lgpio liblgpio1
+sudo apt-get install python3-picamera
 
 python3 -m venv dcc
 source dcc/bin/activate
 
 
 pip install adafruit-blinka adafruit-circuitpython-bno055
+
+pip install pyserial numpy pyzmq pandas opencv-python
+
