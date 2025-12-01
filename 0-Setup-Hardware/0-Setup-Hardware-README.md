@@ -85,4 +85,5 @@ source dcc/bin/activate
 pip install adafruit-blinka adafruit-circuitpython-bno055
 
 pip install pyserial numpy pyzmq pandas opencv-python
+pip install numpy opencv-python matplotlib
 
