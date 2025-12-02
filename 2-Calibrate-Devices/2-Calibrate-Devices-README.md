@@ -37,3 +37,34 @@ python3 node_capture_stream.py \
 python3 two_node_1fps_networked_sync.py   --out session_node2   --interval 1.0   --count 50   --prefix n2   --node-id node2   --server-ip 10.0.0.135   --server-port 5000
 
 python3 desktop_viewer_3d.py --port 5000 --node1-id node1 --node2-id node2
+
+
+sudo timedatectl set-ntp true
+timedatectl status
+
+
+python3 nodes_ntp.py\
+  --out session_node1 \
+  --node-id node1 \
+  --server-ip 10.0.0.135 \
+  --server-port 5000 \
+  --slow-interval 1.0 \
+  --fast-interval 0.1 \
+  --warmup-frames 15 \
+  --imu-threshold 3.0 \
+  --uwb-window 5.0 \
+  --max-frames 0   # 0 = run until Ctrl+C
+
+
+
+python3 nodes_ntp.py\
+  --out session_node2 \
+  --node-id node2 \
+  --server-ip 10.0.0.135 \
+  --server-port 5000 \
+  --slow-interval 1.0 \
+  --fast-interval 0.1 \
+  --warmup-frames 15 \
+  --imu-threshold 3.0 \
+  --uwb-window 5.0 \
+  --max-frames 0   # 0 = run until Ctrl+C
